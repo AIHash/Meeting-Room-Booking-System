@@ -45,3 +45,4 @@ mvnw.cmd
 
 # Other
 target/
+src/main/resources/applicationDB.properties
