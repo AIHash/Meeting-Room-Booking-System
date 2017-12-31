@@ -1,5 +1,6 @@
 package ro.uvt.mrbs.entities;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,15 +14,17 @@ import javax.persistence.OneToOne;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class UserDetail {
+
 
     @Id
     @GeneratedValue
     private long id;
-    private String username;
-    private String password;
+    private String lastName;
+    private String firstName;
+    private String phoneNr;
+    private String email;
 
-    @OneToOne(mappedBy = "user")
-    private UserDetail userDetail;
-
+    @OneToOne
+    private User user;
 }
