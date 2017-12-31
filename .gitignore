@@ -38,5 +38,10 @@ nbactions.xml
 .settings/
 .metadata/ 
 
-#VCS
+# Maven
 .mvn/
+mvnw
+mvnw.cmd
+
+# Other
+target/
