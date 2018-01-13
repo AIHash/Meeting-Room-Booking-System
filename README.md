@@ -18,3 +18,9 @@ Meeting Room Booking System for Web Technologies
 
 3. the driver class name (ex: org.h2.Driver)
 ###### spring.datasource.driver-class-name= ${your option}
+
+
+### You need a emailer.properties in the src/main/resources/. In it you have your own options about the emailer.
+
+###### emailer.email=${email}
+###### emailer.password=${password}

@@ -46,5 +46,6 @@ mvnw.cmd
 # Other
 target/
 src/main/resources/applicationDB.properties
+src/main/resources/emailer.properties
 data.sql
 bin/

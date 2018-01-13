@@ -9,6 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 @ComponentScan(basePackages = "ro.uvt.mrbs")
 @PropertySource(value = "classpath:application.yaml")
 @PropertySource(value = "classpath:applicationDB.properties")
+@PropertySource(value = "classpath:emailer.properties")
 public class MeetingRoomBookingSystemApplication {
 
     public static void main(String[] args) {
