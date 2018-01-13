@@ -1,6 +1,5 @@
 package ro.uvt.mrbs.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,7 +11,6 @@ import javax.persistence.OneToOne;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class User {
 
     @Id
@@ -23,5 +21,11 @@ public class User {
 
     @OneToOne(mappedBy = "user")
     private UserDetail userDetail;
+
+    public User(String username, String password, UserDetail userDetail) {
+        this.username = username;
+        this.password = password;
+        this.userDetail = userDetail;
+    }
 
 }

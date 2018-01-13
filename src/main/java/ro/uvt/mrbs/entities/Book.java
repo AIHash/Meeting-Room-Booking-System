@@ -1,17 +1,14 @@
 package ro.uvt.mrbs.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Book {
 
     @Id
@@ -27,5 +24,11 @@ public class Book {
 
     @OneToOne
     private User user;
+
+    public Book(Date startDate, Date endDate, Room room) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.room = room;
+    }
 
 }

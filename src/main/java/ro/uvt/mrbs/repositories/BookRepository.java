@@ -14,8 +14,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     Book findByStartDate(Date date);
 
     List<Book> findAllByRoom(Room room);
-    
+
     Page<Book> findAllByRoom(Room room, Pageable pageable);
-    
+
     Long countAllByRoom(Room room);
 }
