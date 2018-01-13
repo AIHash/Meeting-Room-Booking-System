@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import ro.uvt.mrbs.entities.Room;
+import ro.uvt.mrbs.entities.User;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
 
@@ -20,4 +21,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     Page<Book> findAllByRoom(Room room, Pageable pageable);
 
     Long countAllByRoom(Room room);
+
+    List<Book> findLast10ByUser(User user);
 }
