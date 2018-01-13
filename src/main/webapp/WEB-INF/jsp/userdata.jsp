@@ -13,33 +13,35 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
+          <div id="nav-placeholder"></div>
+    <script>
+$(function(){
+  $("#nav-placeholder").load("header.html");
+});
+</script>
         <h2>Your Details</h2>
-        <table>
+        <table class="table table-inverse">
             <tbody>
                 <tr>
                     <td>Last Name:</td>
-                    <td>&emsp;</td>
                     <td>${ln}</td>
                 </tr>
                 <tr>
                     <td>First Name:</td>
-                    <td>&emsp;</td>
                     <td>${fn}</td>
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td>&emsp;</td>
                     <td>${email}</td>
                 </tr>
                 <tr>
                     <td>Phone:</td>
-                    <td>&emsp;</td>
                     <td>${phone}</td>
                 </tr>
             </tbody>
         </table>
         <h2>Your Bookings</h2>
-        <table>
+        <table class="table table-inverse">
             <hbody>
                 <th>Start Date</th>
                 <th>&emsp;</th>
