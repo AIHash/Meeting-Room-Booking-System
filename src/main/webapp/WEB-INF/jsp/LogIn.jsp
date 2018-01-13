@@ -13,8 +13,9 @@
 <body>
 
 <div class="container">
+    <font color="red">${errorMessage}</font>
   <h2  style="margin-left:17%">Log in to book a room</h2>
-  <form class="form-horizontal" action="/action_page.php"><!--  ddddddddddddddddddddddddddddd   -->/
+  <form class="form-horizontal" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2" for="User">User:</label>
       <div class="col-xs-4">
