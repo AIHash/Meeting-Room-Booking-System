@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import ro.uvt.mrbs.entities.Book;
 import ro.uvt.mrbs.entities.Room;
 import ro.uvt.mrbs.entities.User;
+import ro.uvt.mrbs.exeptions.RoomBookedException;
 import ro.uvt.mrbs.repositories.BookRepository;
 import ro.uvt.mrbs.repositories.RoomRepository;
 import ro.uvt.mrbs.repositories.UserRepository;
@@ -41,7 +42,7 @@ public class BookCreator {
             book.setEndDate(endDate);
             return bookRepository.save(book);
         } else {
-            return null;
+            throw new RoomBookedException();
         }
     }
 
