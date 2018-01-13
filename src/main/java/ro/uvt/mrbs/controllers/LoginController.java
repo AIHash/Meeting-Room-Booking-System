@@ -43,6 +43,7 @@ public class LoginController {
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String showLoginPageAfterLogout(ModelMap model) {
         model.remove("name");
-        return "LogIn";
+        return "redirect:/login";
     }
+    
 }
