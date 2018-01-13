@@ -5,4 +5,5 @@ import ro.uvt.mrbs.entities.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
+    boolean existsByUsernameAndPassword(String username, String password);
 }
