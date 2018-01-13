@@ -4,4 +4,4 @@ security:
 
 spring:
   main:
-    web-environment: true
+    web-environment: false
