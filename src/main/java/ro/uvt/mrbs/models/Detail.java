@@ -20,5 +20,5 @@ public class Detail {
     private String phone;
 
     private List<OutBoundBook> books;
-    
+
 }

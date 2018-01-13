@@ -37,7 +37,7 @@ public class LoginController {
 
         model.put("name", User);
 
-        return "welcome";
+        return "redirect:/details";
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
@@ -45,5 +45,5 @@ public class LoginController {
         model.remove("name");
         return "redirect:/login";
     }
-    
+
 }

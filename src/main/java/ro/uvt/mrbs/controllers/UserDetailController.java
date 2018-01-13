@@ -14,7 +14,7 @@ import ro.uvt.mrbs.services.ShowDetail;
  * @author Zbiera Alexandru-Robert
  */
 @Controller
-@SessionAttributes({"ln", "fn", "email", "phone", "name"})
+@SessionAttributes("name")
 public class UserDetailController {
 
     private final ShowDetail showDetail;
@@ -26,9 +26,11 @@ public class UserDetailController {
 
     @RequestMapping(value = "/details", method = RequestMethod.GET)
     public String showDetails(ModelMap model) {
+        if (model.get("name") == null) {
+            return "redirect:/login";
+        }
         String username = (String) model.get("name");
         Detail detail = showDetail.showDetail(username);
-        model.put("name", username);
         model.put("ln", detail.getLastname());
         model.put("fn", detail.getFirstname());
         model.put("email", detail.getEmail());
