@@ -49,3 +49,4 @@ src/main/resources/applicationDB.properties
 src/main/resources/emailer.properties
 data.sql
 bin/
+WebContent/
