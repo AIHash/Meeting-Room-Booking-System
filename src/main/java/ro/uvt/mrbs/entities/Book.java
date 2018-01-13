@@ -17,13 +17,15 @@ public class Book {
     @Id
     @GeneratedValue
     private long id;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date startDate;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date endDate;
 
     @OneToOne
     private Room room;
 
-    @OneToMany
-    private List<User> users;
+    @OneToOne
+    private User user;
 
 }

@@ -18,6 +18,4 @@ public class Room {
     @GeneratedValue
     private long id;
     private String name;
-    private boolean isBooked;
-
 }
