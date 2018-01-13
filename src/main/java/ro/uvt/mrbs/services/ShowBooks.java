@@ -20,7 +20,7 @@ public class ShowBooks {
         this.bookRepository = bookRepository;
     }
 
-    public Page<Book> getRooms(Pageable pageable) {
+    public Page<Book> getBooks(Pageable pageable) {
         return bookRepository.findAll(pageable);
     }
 }
