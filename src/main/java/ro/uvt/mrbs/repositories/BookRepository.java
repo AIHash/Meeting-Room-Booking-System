@@ -11,6 +11,8 @@ import ro.uvt.mrbs.entities.Room;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
 
+    Page<Book> findAll(Pageable pageable);
+
     Book findByStartDate(Date date);
 
     List<Book> findAllByRoom(Room room);
