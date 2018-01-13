@@ -9,6 +9,8 @@ import ro.uvt.mrbs.entities.Book;
 import ro.uvt.mrbs.entities.Room;
 import ro.uvt.mrbs.entities.User;
 import ro.uvt.mrbs.repositories.BookRepository;
+import ro.uvt.mrbs.repositories.RoomRepository;
+import ro.uvt.mrbs.repositories.UserRepository;
 
 /**
  *
@@ -18,13 +20,19 @@ import ro.uvt.mrbs.repositories.BookRepository;
 public class BookCreator {
 
     private final BookRepository bookRepository;
+    private final RoomRepository roomRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public BookCreator(BookRepository bookRepository) {
+    public BookCreator(BookRepository bookRepository, RoomRepository roomRepository, UserRepository userRepository) {
         this.bookRepository = bookRepository;
+        this.roomRepository = roomRepository;
+        this.userRepository = userRepository;
     }
 
-    public Book createBook(User user, Room room, Date startDate, Date endDate) {
+    public Book createBook(long user_id, long room_id, Date startDate, Date endDate) {
+        Room room = roomRepository.getOne(room_id);
+        User user = userRepository.getOne(user_id);
         if (isBookable(room, startDate, endDate)) {
             Book book = new Book();
             book.setRoom(room);
