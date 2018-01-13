@@ -13,6 +13,6 @@ public class BookMapper {
     }
 
     public static OutBoundBook toOutBound(Book book) {
-        return new OutBoundBook(book.getStartDate(), book.getEndDate(), book.getRoom());
+        return new OutBoundBook(book.getStartDate(), book.getEndDate(), book.getRoom().getName());
     }
 }

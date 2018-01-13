@@ -1,10 +1,11 @@
 package ro.uvt.mrbs.models;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ro.uvt.mrbs.entities.Room;
+import ro.uvt.mrbs.util.JsonDateSerializer;
 
 /**
  *
@@ -15,7 +16,9 @@ import ro.uvt.mrbs.entities.Room;
 @NoArgsConstructor
 public class OutBoundBook {
 
+    @JsonSerialize(using = JsonDateSerializer.class)
     private Date startDate;
+    @JsonSerialize(using = JsonDateSerializer.class)
     private Date endDate;
-    private Room room;
+    private String room;
 }
