@@ -28,10 +28,12 @@ public class UserDetailController {
     public String showDetails(ModelMap model) {
         String username = (String) model.get("name");
         Detail detail = showDetail.showDetail(username);
+        model.put("name", username);
         model.put("ln", detail.getLastname());
         model.put("fn", detail.getFirstname());
         model.put("email", detail.getEmail());
         model.put("phone", detail.getPhone());
+        model.put("books", detail.getBooks());
         return "userdata";
     }
 
