@@ -49,7 +49,7 @@ public class BookCreator {
     private boolean isBookable(Room room, Date startDate, Date endDate) {
         Long nrOfBooks = bookRepository.count();
         int nrOfBooksPerPage = 10;
-        Long nrOfPages = nrOfBooks / nrOfBooksPerPage;
+        Long nrOfPages = nrOfBooks / nrOfBooksPerPage+1;
         Page<Book> books;
         for (int i = 0; i < nrOfPages; i++) {
             books = bookRepository.findAllByRoom(room, new PageRequest(i, nrOfBooksPerPage));
