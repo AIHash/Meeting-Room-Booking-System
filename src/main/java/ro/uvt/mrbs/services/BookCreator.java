@@ -54,8 +54,10 @@ public class BookCreator {
         for (int i = 0; i < nrOfPages; i++) {
             books = bookRepository.findAllByRoom(room, new PageRequest(i, nrOfBooksPerPage));
             if (books.getContent().stream().anyMatch(x
-                    -> (startDate.after(x.getStartDate()) && startDate.before(x.getEndDate()))
-                    || (endDate.after(x.getStartDate()) && endDate.before(x.getEndDate())))) {
+            		  -> (startDate.after(x.getStartDate()) && startDate.before(x.getEndDate()))
+                      || (endDate.after(x.getStartDate()) && endDate.before(x.getEndDate()))
+                      || startDate.equals(x.getStartDate())
+                      || endDate.equals(x.getEndDate())))  {
                 return false;
             }
         }
