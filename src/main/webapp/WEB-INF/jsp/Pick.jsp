@@ -1,4 +1,26 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+   <head>
+        <title>Pick a room</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+</head>
+<body>
+     <div id="nav-placeholder"></div>
+    <script>
+$(function(){
+  $("#nav-placeholder").load("header.html");
+});
+</script>
+    
+<h3><font color="red">${errorMessage}</font></h3>
 <form method="post">
     <table border="1">
         <tbody>
@@ -82,3 +104,14 @@
     </table>
     <button type="submit" >Submit</button>
 </form>
+</body>
+</html>
+<style type="text/css">
+    form{
+       margin-left: 20%;
+
+    }
+
+
+
+</style>
