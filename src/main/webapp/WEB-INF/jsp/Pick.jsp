@@ -109,9 +109,5 @@ $(function(){
 <style type="text/css">
     form{
        margin-left: 20%;
-
     }
-
-
-
 </style>

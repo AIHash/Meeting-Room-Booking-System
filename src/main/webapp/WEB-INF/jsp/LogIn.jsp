@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="logo1.png"/>
+
 </head>
 <body >
-
+<link rel="shortcut icon" href="logo1.png"/>
 <div class="container">
     <h3><font color="red">${errorMessage}</font></h3>
   <h2  style="margin-left:17%">Log in to book a room</h2>
