@@ -23,4 +23,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     Long countAllByRoom(Room room);
 
     List<Book> findLast10ByUser(User user);
+
+    Page<Book> findAllBySentFalseAndStartDateGreaterThan(Date date, Pageable pageable);
 }

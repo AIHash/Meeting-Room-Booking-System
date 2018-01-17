@@ -35,7 +35,6 @@ public class BookingController {
         }
         return "Pick";
     }
-    
 
     @RequestMapping(value = "/pick", method = RequestMethod.POST)
     public String postBooking(ModelMap model, @RequestParam int room_id,
@@ -55,22 +54,18 @@ public class BookingController {
         Date today = new Date();
         cal.setTime(today);
         //check if the input dates are older than today 
-        if(start_date.after(today))
-        {
-        	//check if the dates are exactly the same 
-        if(!start_date.equals(start_date) )
-        {
-        	 bookCreator.createBook(userRepository.findByUsername((String) model.get("name")).getId(), room_id, start_date, end_date);
-        	 return "redirect:/details";
+        if (start_date.after(today)) {
+            //check if the dates are exactly the same 
+            if (!start_date.equals(end_date)) {
+                bookCreator.createBook(userRepository.findByUsername((String) model.get("name")).getId(), room_id, start_date, end_date);
+                return "redirect:/details";
+            } else {
+                model.put("errorMessage", "End Date and Start Date cannot be the same");
+                return "Pick";
+            }
         }
-        else {
-        	 model.put("errorMessage", "end and start date cannot be the same");
-        	 return "Pick";
-        }
-        }
-        model.put("errorMessage", "the booking dates should be in the future");
-   	    return "Pick";
-        
+        model.put("errorMessage", "The booking dates should be in the future");
+        return "Pick";
 
     }
 

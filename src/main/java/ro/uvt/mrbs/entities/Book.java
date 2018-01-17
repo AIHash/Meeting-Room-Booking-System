@@ -18,6 +18,7 @@ public class Book {
     private Date startDate;
     @Temporal(TemporalType.TIMESTAMP)
     private Date endDate;
+    private boolean sent;
 
     @OneToOne
     private Room room;
